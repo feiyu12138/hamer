@@ -3,8 +3,10 @@ import pytorch_lightning as pl
 from typing import Any, Dict, Mapping, Tuple
 
 from yacs.config import CfgNode
-
-from ..utils import SkeletonRenderer, MeshRenderer
+try:
+    from ..utils import SkeletonRenderer, MeshRenderer
+except:
+    print("Failed to import renderers from latent_action_model.genie.modules")
 from ..utils.geometry import aa_to_rotmat, perspective_projection
 from ..utils.pylogger import get_pylogger
 from .backbones import create_backbone

@@ -1,9 +1,11 @@
 import torch
 from typing import Any
-
-from .renderer import Renderer
-from .mesh_renderer import MeshRenderer
-from .skeleton_renderer import SkeletonRenderer
+try:
+    from .renderer import Renderer
+    from .mesh_renderer import MeshRenderer
+    from .skeleton_renderer import SkeletonRenderer
+except:
+    print("Failed to import renderers from latent_action_model.genie.modules")
 from .pose_utils import eval_pose, Evaluator
 
 def recursive_to(x: Any, target: torch.device):

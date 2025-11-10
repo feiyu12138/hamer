@@ -50,3 +50,5 @@ def load_hamer(checkpoint_path=DEFAULT_CHECKPOINT):
 
     model = HAMER.load_from_checkpoint(checkpoint_path, strict=False, cfg=model_cfg)
     return model, model_cfg
+
+
